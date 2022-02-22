@@ -74,7 +74,7 @@ class Car {
 
 const car = new Car();
 car.setType(CAR_TYPES.SEDAN)
-console.log(car.getType());
+//console.log(car.getType());
 
 
 enum MERCEDES_COLOR_TYPES{
@@ -97,4 +97,24 @@ class Mercedes extends Car {
 const mercedes = new Mercedes();
 mercedes.setType(CAR_TYPES.COMBI);
 mercedes.setColor(MERCEDES_COLOR_TYPES.BLUE);
-console.log(mercedes.getColor(), mercedes.getType())
+//console.log(mercedes.getColor(), mercedes.getType())
+
+//uprajnenie 2
+
+class Audi extends Car{
+}
+
+const wait = async() => {
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            console.log(3);
+        }, 2000)
+    })
+}
+
+(async () => {
+    console.log(1)
+    console.log(2)
+    console.log(await wait()) //await - "izchakva" izvikva func
+    console.log(4)
+})
